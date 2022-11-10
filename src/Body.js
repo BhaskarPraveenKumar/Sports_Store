@@ -29,7 +29,7 @@ import logo_5 from './images/logo-philips.png'
 import playstore from './images/play-store.png'
 import appstore from './images/app-store.png'
 import logo_footer from './images/logo.png'
-
+import { Link } from 'react-router-dom'
 
 // Body
 
@@ -44,8 +44,8 @@ const Body = () =>{
                 </div>
                 <nav>
                     <ul>
-                        <li >Home</li>
-                        <li>Products</li>
+                    <li><Link to="/">Home</Link></li>
+                            <li><Link to={"/products"}>Products</Link></li>
                         <li>About</li>
                         <li>Contact</li>
                         <li>Account</li>
