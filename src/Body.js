@@ -30,6 +30,7 @@ import playstore from './images/play-store.png'
 import appstore from './images/app-store.png'
 import logo_footer from './images/logo.png'
 
+
 // Body
 
 const Body = () =>{ 
@@ -315,52 +316,7 @@ const Body = () =>{
             </div>
         </div>
      </div>
-
-     {/*Footer*/}
-     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Dowload Our App</h3>
-                    <p>Download App for Andriod and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src={playstore}/>
-                        <img src={appstore}/>
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src={logo_footer} />
-                    <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Sports Accessible to the Many.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr/>
-            <p class="copyright"> Copyright 2022 - Sportswear Store</p>
-        </div>
-     </div>
-
-
-
-
-
-        
+    
         
         </div> 
 

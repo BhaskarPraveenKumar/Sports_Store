@@ -1,272 +1,78 @@
 // Imports
-
+import './App.css';
+import Header from './Header';
+import Footer from './footer';
+import { useEffect,useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 // All Product_details
-const Header = () =>{
+const Products = () =>{
+
+    const params = useParams();
+
+    console.log(params.id);
+
+    const [info,setInfo] = useState({});
+
+    useEffect(()=>{
+
+        const reqAPI = `http://localhost:8082/products/${params.id}`;
+
+        axios.get(reqAPI).then((res)=>{
+            console.log(res.data);
+            setInfo(res.data);
+            console.log(info);
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+    },[])
 
     return(
         <div>
-            <div class="container">
-        <div class = 'navbar'>
-            <div class = 'logo'>
-                <img src="images/logo.png" width="125px"/>
-            </div>
-            <nav>
-                <ul id = "MenuItems">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Account</a></li>
-                </ul>
-            </nav>
-            <img src="images/cart.png" width="30px" height="30px"/>
-            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()"/>
-        </div>
-        
-    </div>
 
-     <div class="small-container">
-        <div class="row row-2">
-            <h2>All Products</h2>
-            <select>
-                <option >Default Shorting</option>
-                <option >Sort by Price</option>
-                <option >Sort by popularity</option>
-                <option >Sort by rating</option>
-                <option >Sort by sale</option>
-            </select>
-        </div>
-        
-        <div class = 'row'>
-            <div class="col-4">
-                <img src="images/product-1.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
+            <Header/>
+
+                            <div className="small-container single-product">
+                            <div className="row">
+                                <div className="col-2">
+                                    
+                                <img src={info.link} width="100%" id = 'ProductImg'/>
+                                </div>
+                            </div>
+
+
+                            <div className="col-2">
+                                <p>Home/ {info.Category}</p>
+                                <h1>{info.Name}</h1>
+                                <h4>£{info.price}.00</h4>
+                                <select >
+                                    <option > Select Size</option>
+                                    <option > S</option>
+                                    <option > M</option>
+                                    <option > L</option>
+                                    <option > XL</option>
+                                    <option > XXL</option>
+                                </select>
+                                <input type="number" value ='1'/>
+                                <a href="" className = 'btn'>Add to cart</a>
+                                <h3>Product Details</h3>
+                                <br/>
+                                <p>{info.description} </p>
+
+                            
+                        </div>
                     
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-2.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-3.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-4.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            
-        </div>
-        <div class = 'row'>
-            <div class="col-4">
-                <img src="images/product-5.jpg">
-                <h4>Red T-Shirt</h4>
-                <div class="rating">/
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-6.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-7.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-8.jpg"/>
-                <h4>Red T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    
-
-
-                </div>
-                <p>£50.00</p>
-            </div>
-            <div class = 'row'>
-                <div class="col-4">
-                    <img src="images/product-9.jpg"/>
-                    <h4>Red T-Shirt</h4>
-                    <div class="rating">
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        
-    
-    
                     </div>
-                    <p>£50.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-10.jpg"/>
-                    <h4>Red T-Shirt</h4>
-                    <div class="rating">
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        
-    
-    
-                    </div>
-                    <p>£50.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-11.jpg"/>
-                    <h4>Red T-Shirt</h4>
-                    <div class="rating">
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        
-    
-    
-                    </div>
-                    <p>£50.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-12.jpg"/>
-                    <h4>Red T-Shirt</h4>
-                    <div class="rating">
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        
-    
-    
-                    </div>
-                    <p>£50.00</p>
-                </div>
-                <div class="page-btn">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>&#8594</span>
-                </div>
-     
-     </div>
-  
 
-     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Dowload Our App</h3>
-                    <p>Download App for Andriod and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png"/>
-                        <img src="images/app-store.png"/>
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="images/logo.png"/ >
-                    <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Sports Accessible to the Many.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="copyright"> Copyright 2022 - Sportswear Store</p>
-        </div>
-     </div>
+        <Footer/>
 
         </div>
-
-        
 
     );
+    
 }
 
 
-// Exports
-export default products;
+export default Products;

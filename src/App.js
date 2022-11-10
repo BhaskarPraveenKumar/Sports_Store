@@ -1,22 +1,18 @@
 import './App.css';
-
-
-
 // Components
 import Header from './Header';
 import Body from './Body';
-//import Footer from './Footer';
+import Footer from './footer';
+
 
 const App = () => {
-
- 
-
 
   return (
     <div className="App">
     
-    <Header/>
-    <Body/>
+      <Header/>
+      <Body/>
+      <Footer/>
 
     </div>
     
