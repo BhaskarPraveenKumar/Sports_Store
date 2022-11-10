@@ -17,7 +17,7 @@ const Products = () =>{
 
     useEffect(()=>{
 
-        const reqAPI = `http://localhost:8082/products/${params.id}`;
+        const reqAPI = `https://sports-wear-athlets-choice-api.netlify.app/.netlify/functions/api/products/${params.id}`;
 
         axios.get(reqAPI).then((res)=>{
             console.log(res.data);

@@ -13,7 +13,8 @@ const Product = () =>{
 
     useEffect(()=>{
 
-        const reqAPI = "http://localhost:8082/products/all";
+        // const reqAPI = "http://localhost:8082/products/all";
+        const reqAPI = "https://sports-wear-athlets-choice-api.netlify.app/.netlify/functions/apiproducts/all"
 
         axios.get(reqAPI).then((res)=>{
             console.log(res);
@@ -42,7 +43,7 @@ const Product = () =>{
         }
 
 
-        const dataSent = await axios.post('http://localhost:8082/products/create',obj);
+        const dataSent = await axios.post('https://sports-wear-athlets-choice-api.netlify.app/.netlify/functions/api/products/create',obj);
 
         setInfo(dataSent.data);
 
