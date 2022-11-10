@@ -1,11 +1,6 @@
 // Imports
 import logo from './images/logo.png'
 import cart from './images/cart.png'
-import menu from './images/menu.png'
-import buy_1 from './images/buy-1.jpg'
-import buy_2 from './images/buy-2.jpg'
-import playstore from './images/play-store.png'
-import appstore from './images/app-store.png'
 import './App.css';
 import { Link } from 'react-router-dom'
 
@@ -23,7 +18,7 @@ const Header = () =>{
                     </div>
 
                     <nav>
-                        <ul id = "MenuItems">
+                        <ul className="MenuItems">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to={"/products"}>Products</Link></li>
                             <li><a href="">About</a></li>

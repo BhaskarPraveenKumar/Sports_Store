@@ -18,17 +18,6 @@ import pro_10 from './images/product-10.jpg'
 import pro_11 from './images/product-11.jpg'
 import pro_12 from './images/product-12.jpg'
 import exclusive from './images/exclusive.png'
-import user_1 from './images/user-1.png'
-import user_2  from './images/user-2.png'
-import user_3 from './images/user-3.png'
-import logo_1 from './images/logo-coca-cola.png'
-import logo_2 from './images/logo-godrej.png'
-import logo_3 from './images/logo-oppo.png'
-import logo_4 from './images/logo-paypal.png'
-import logo_5 from './images/logo-philips.png'
-import playstore from './images/play-store.png'
-import appstore from './images/app-store.png'
-import logo_footer from './images/logo.png'
 import { Link } from 'react-router-dom'
 
 // Body
@@ -43,12 +32,12 @@ const Body = () =>{
                     <img src={logo} width = '125px'></img>
                 </div>
                 <nav>
-                    <ul>
-                    <li><Link to="/">Home</Link></li>
-                            <li><Link to={"/products"}>Products</Link></li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Account</li>
+                    <ul className="MenuItems">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to={"/products"}>Products</Link></li>
+                        <li><Link to="/">About</Link></li>
+                        <li><Link to="/">Contact</Link></li>
+                        <li><Link to="/">Account</Link></li>
                     </ul>
                 </nav>
                 <img src = {cart} width = '30px' height = '30px'></img>
@@ -62,7 +51,7 @@ const Body = () =>{
                 </div>
 
                 <div class = 'col-2'> 
-                    <img src = {main_bg}></img>
+                    <img src = {main_bg} className="main_img"></img>
                 </div>
             </div>
 
@@ -262,60 +251,9 @@ const Body = () =>{
         </div>
         </div>
 
-        {/*Testimonials*/}
-        <div class="testimonial">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-3">
-                    <i class = "fa fa-quote-left"></i>
-                    <p>he Mi Smart Band 4 features a 39.9% larger (than Mi band 3) AMOLED color full-touch display with adjustable brightness, so everything is clear as can be</p>
+        
 
-                    <img src={user_1}/ >
-                    <h3>Sean Parker</h3> 
-
-                </div>
-                <div class="col-3">
-                    <i class = "fa fa-quote-left"></i>
-                    <p>he Mi Smart Band 4 features a 39.9% larger (than Mi band 3) AMOLED color full-touch display with adjustable brightness, so everything is clear as can be</p>
-
-                    <img src={user_2} />
-                    <h3>Sean Parker</h3> 
-
-                </div>
-                <div class="col-3">
-                    <i class = "fa fa-quote-left"></i>
-                    <p>The Mi Smart Band 4 features a 39.9% larger (than Mi band 3) AMOLED color full-touch display with adjustable brightness, so everything is clear as can be</p>
-
-                    <img src={user_3}/>
-                    <h3>Sean Parker</h3> 
-
-                </div>
-            </div>
-        </div>
-     </div>
-
-     {/*Brands*/}
-     <div class="brands">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-5">
-                    <img src={logo_1}/>
-                </div>
-                <div class="col-5">
-                    <img src={logo_2}/>
-                </div>
-                <div class="col-5">
-                    <img src={logo_3}/>
-                </div>
-                <div class="col-5">
-                    <img src={logo_4}/>
-                </div>
-                <div class="col-5">
-                    <img src={logo_5}/>
-                </div>
-            </div>
-        </div>
-     </div>
+    
     
         
         </div> 

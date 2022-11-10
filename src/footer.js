@@ -32,7 +32,7 @@ const Footer = () =>{
                                 <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Sports Accessible to the Many.</p>
                             </div>
                             <div className="footer-col-3">
-                                <h3>Useful Links</h3>
+                                <h3><u>Useful Links</u></h3>
                                 <ul>
                                     <li>Coupons</li>
                                     <li>Blog Post</li>
@@ -41,7 +41,7 @@ const Footer = () =>{
                                 </ul>
                             </div>
                             <div className="footer-col-4">
-                                <h3>Follow Us</h3>
+                                <h3><u>Follow Us</u></h3>
                                 <ul>
                                     <li>Facebook</li>
                                     <li>Twitter</li>
@@ -51,7 +51,7 @@ const Footer = () =>{
                             </div>
                         </div>
                         <hr/>
-                        <p className="copyright"> Copyright 2022 - Sportswear Store</p>
+                        <p className="copyright"> Copyright 2022 - Praveen The good Guy &hearts;</p>
                     </div>
                 </div>
         </div>

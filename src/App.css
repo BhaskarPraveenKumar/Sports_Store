@@ -619,3 +619,29 @@ th:last-child{
   font-weight: bolder;
   box-shadow: 2px 2px white;
 }
+
+.main_img{
+  width:100vh;
+}
+
+.MenuItems a{
+
+  color: black;
+  border:1px solid black;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+.MenuItems a:hover{
+
+  color: white;
+  border:1px solid black;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: black;
+
+}
+
